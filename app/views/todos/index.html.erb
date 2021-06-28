@@ -10,14 +10,22 @@
 <h2>La liste de mes todos </h2>
 <% @todos.each do |todo| %>
     <div class="card m-3" style="width: 18rem;">
-    <div class="card-body">
-        <h4 class="card-title"><%= todo.title %></h4>
-        <p class="card-text"><%= todo.description %></p>
-        <p class="card-text"> Date limite : <%= todo.date %></p>
-        <a href="<%= todo_path(todo.id) %>" class="card-link"> Voir la suite </a>
-        <a href="<%= edit_todo_path(todo.id) %>" class="card-link"> Editer </a>
-        <a href="<%= todo_path(todo.id) %>" class="btn btn-outline-danger mt-5" data-confirm="Etes vous sûr ?" data-method="DELETE"> Supprimer </a>
-    </div>
+        <div class="card-body">
+            <h4 class="card-title"><%= todo.title %></h4>
+            <p class="card-text"><%= todo.description %></p>
+            <p class="card-text"> Date limite : <%= todo.date %></p>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" !checked>
+                <label class="form-check-label" for="defaultCheck1">
+                    Todo effectuée
+                </label>
+            </div>
+            <p>
+                <a href="<%= todo_path(todo.id) %>" class="card-link"> Voir la suite </a>
+                <a href="<%= edit_todo_path(todo.id) %>" class="card-link"> Editer </a>
+                <a href="<%= todo_path(todo.id) %>" class="btn btn-outline-danger mt-5" data-confirm="Etes vous sûr ?" data-method="DELETE"> Supprimer </a>
+            </p>
+        </div>
     </div>
 <% end %>
 <p class="mt-5">
