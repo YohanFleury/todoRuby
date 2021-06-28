@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   resources :todos
   resources :users
 
+  get '/', to: 'todos#index'
+  get '/login', to: 'sessions#login'
+  post '/login', to: 'sessions#create'
+
 
 
 

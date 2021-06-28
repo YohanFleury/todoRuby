@@ -1,0 +1,7 @@
+<h3> Créer un compte </h3>
+
+<%= form_for @user do |f| %>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+    <%= f.submit "Créer mon compte" %>
+<% end %>

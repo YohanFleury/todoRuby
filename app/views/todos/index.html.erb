@@ -1,4 +1,13 @@
-<h1>La liste de mes todos </h1>
+
+<% if !current_user %>
+<h1> Bienvenue ! Sur ce site tu peux créer des todos listes !</h1>
+<a href="<%= login_path %>" class="btn btn-info"> Se connecter </a>
+<a href="<%= new_user_path %>" class="btn btn-info"> Créer un compte </a>
+
+<% else %>
+<h1>Hello <%= current_user.email%> </h1>
+
+<h2>La liste de mes todos </h2>
 <% @todos.each do |todo| %>
     <div class="card m-3" style="width: 18rem;">
     <div class="card-body">
@@ -14,3 +23,4 @@
 <p class="mt-5">
     <a href="<%= new_todo_path %>" class="btn btn-warning"> Créer une todo </a>
 </p>
+<%end%>

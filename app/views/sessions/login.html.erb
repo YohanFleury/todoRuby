@@ -1,0 +1,7 @@
+<div>
+    <h3>Se connecter </h3>
+    <%= form_tag '/login' do %>
+    Email: <%= email_field_tag :email %>
+    <%= submit_tag 'Se connecter'%>
+    <% end %>
+</div>
