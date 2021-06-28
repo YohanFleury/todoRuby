@@ -1,0 +1,14 @@
+<h1> Editer la todo  </h1>
+
+<%= form_for @todo do |f| %>
+    <div class='form-group'>
+        <label> Titre de la todo </label>
+        <%= f.text_field :title, class: 'form-control' %>
+        <label> Description de la todo </label>
+        <%= f.text_area :description, class: "form-control" %>
+        <label> Date limite pour faire la todo </label>
+        <%= f.date_select(:date, :order => [:month, :day, :year]) %>
+            <button type="submit" class="btn btn-primary mt-3"> Modifier la todo </button>
+        </div>
+    </div>
+<% end %>
