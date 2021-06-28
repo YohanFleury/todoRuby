@@ -1,14 +1,15 @@
 <h1>La liste de mes todos </h1>
 <% @todos.each do |todo| %>
-<h4> <%= todo.title %> </h4>
-<p> <%= todo.description %> </p>
-<p> Date limite : <%= todo.date%> </p>
-<p>
-    <a href="<%= todo_path(todo.id) %>" class="btn btn-primary"> Voir la suite </a>
-    <a href="<%= edit_todo_path(todo.id) %>" class="btn btn-light"> Editer </a>
-    <a href="<%= todo_path(todo.id) %>" class="btn btn-danger" data-confirm="Etes vous sûr ?" data-method="DELETE"> Supprimer </a>
-
-</p>
+    <div class="card m-3" style="width: 18rem;">
+    <div class="card-body">
+        <h4 class="card-title"><%= todo.title %></h4>
+        <p class="card-text"><%= todo.description %></p>
+        <p class="card-text"> Date limite : <%= todo.date %></p>
+        <a href="<%= todo_path(todo.id) %>" class="card-link"> Voir la suite </a>
+        <a href="<%= edit_todo_path(todo.id) %>" class="card-link"> Editer </a>
+        <a href="<%= todo_path(todo.id) %>" class="btn btn-outline-danger mt-5" data-confirm="Etes vous sûr ?" data-method="DELETE"> Supprimer </a>
+    </div>
+    </div>
 <% end %>
 <p class="mt-5">
     <a href="<%= new_todo_path %>" class="btn btn-warning"> Créer une todo </a>
